@@ -1,0 +1,64 @@
+@charset "utf-8";
+.marco {
+  border: 2px solid gray;
+  width: fit-content;
+  padding: 8px;
+  margin:0 auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+  "visor visor visor visor"
+  ".  .  .  s"
+  ".  .  .  r"
+  ".  .  .  p"
+  "sgn  .  .  d"
+  "eq eq eq clr";
+  }
+.marco .tecla{
+  text-align: center;
+  height: 32px;
+  width:  50px;
+  line-height: 32px;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px 2px lightgray ;
+  }
+.marco .tecla:active, .marco .visor{
+  box-shadow: 0px 0px 3px 2px lightgray  ;
+  }
+.marco .visor{
+  border: 1px solid lightgray;
+  grid-area: visor;
+  height: 32px;
+  line-height: 32px;
+  padding-right: 8px;
+  text-align: right;
+  cursor: default;
+  box-shadow: none;
+  }
+.marco .signo{
+  grid-area: sgn;
+  }
+.marco .borrar{
+  grid-area: clr;
+  background: aliceblue
+  }
+.marco :is(.oper_S, .oper_R, .oper_P, .oper_D){
+  background: gray;
+  color: white;
+  }
+.marco .oper_S{
+  grid-area: s;
+  }
+.marco .oper_R{
+  grid-area: r;
+  }
+.marco .oper_P{
+  grid-area: p;
+  }
+.marco .oper_D{
+  grid-area: d;
+  }
+.tecla.enter{
+  width: auto;
+  grid-area: eq;
+  }
